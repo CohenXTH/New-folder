@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Register User</h2>
+  <!-- Button to Open the Modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Sign Up
+  </button>
+
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Heading</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+		<div class="modal-body">
+			<div class="container-fluid">
+			
+				
+				
+				
+					<form  id="registration_form" method="POST" >
+				
+						
+						
+						
+				
+						
+						
+						<div class="row">
+					<div class="col-lg-2">
+						<label class="control-label" style="position:relative; top:7px;">Firstname:</label>
+					</div>
+					<div class="col-lg-10">
+						<input type="text" id="form_fname" class="form-control" name="firstname" required>
+					</div>
+							<span class="error_form" id="fname_error_message"></span>	
+							
+							
+							
+				</div>
+				<div style="height:10px;"></div>
+				<div class="row">
+					<div class="col-lg-2">
+						<label class="control-label" style="position:relative; top:7px;">Middlename:</label>
+					</div>
+					<div class="col-lg-10">
+						<input type="text" id="form_mname"  class="form-control" name="middlename" required>
+					</div>
+					
+					<span class="error_form" id="mname_error_message"></span>	
+				</div>
+						
+						
+							<div style="height:10px;"></div>
+				<div class="row">
+					<div class="col-lg-2">
+						<label class="control-label" style="position:relative; top:7px;">Lastname:</label>
+					</div>
+					<div class="col-lg-10">
+						<input type="text"  id="form_lname" class="form-control" name="lastname" required>
+					</div>
+					
+					
+					<span class="error_form" id="lname_error_message"></span>	
+				</div>
+						
+
+						
+							<div style="height:10px;"></div>
+				<div class="row">
+					<div class="col-lg-2">
+						<label class="control-label" style="position:relative; top:7px;">Gender:</label>
+					</div>
+					<div class="col-lg-10">
+					<div class="form-inline">
+		<label><input  id="form_gender" type="radio" name="gender" value="male" required> Male</label>
+		<label><input id="form_gender" type="radio" name="gender" value="female" required > Female</label>
+	</div>
+					</div>
+					
+					<span class="error_form" id="gender_error_message"></span>
+				</div>
+						
+						<div style="height:10px;"></div>
+				<div class="row">
+					<div class="col-lg-2">
+						<label class="control-label" style="position:relative; top:7px;"> Birthdate:</label>
+					</div>
+					<div class="col-lg-10">
+							<input type="date" class="form-control" id="form_birthdate"  name="birthdate" required>
+					</div>
+					  
+				</div>
+				
+						
+						
+						
+						
+						
+									<div style="height:10px;"></div>
+				<div class="row">
+					<div class="col-lg-2">
+						<label class="control-label" style="position:relative; top:7px;">Email:</label>
+					</div>
+					<div class="col-lg-10">
+<input type="email"  class="form-control" id="form_email" name="email"  required>
+					</div>
+		<span class="error_form" id="email_error_message" ></span>
+				</div>
+						
+						
+
+						
+							<div style="height:10px;"></div>
+				<div class="row">
+					<div class="col-lg-2">
+						<label class="control-label" style="position:relative; top:7px;">Password:</label>
+					</div>
+					<div class="col-lg-10">
+				<input type="password" class="form-control" id="form_password" name="password" required>
+					</div>
+						<span class="error_form" id="password_error_message"></span>
+				</div>
+						
+						
+						
+						
+							<div style="height:10px;"></div>
+				<div class="row">
+					<div class="col-lg-2">
+						<label class="control-label" style="position:relative; top:7px;">Retype Password:</label>
+					</div>
+					<div class="col-lg-10">
+							<input type="password" class="form-control" id="form_retype_password" name="" required="">
+					</div>
+						<span class="error_form" id="retype_password_error_message"></span>
+				</div>
+						
+							
+						
+						
+				
+			</div> 
+			</div>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+		  <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Save</a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+</body>
+</html>
+
+<script type="application/javascript">
+		
+
+	
+	
+	$(function(){
+		
+				$("#fname_error_message").hide();
+				$("#mname_error_message").hide();
+				$("#lname_error_message").hide();
+				$("#email_error_message").hide();
+				$("#password_error_message").hide();
+				$("#retype_password_error_message").hide();
+	
+
+				var error_fname= false;
+				var error_mname= false;
+				var error_lname = false;
+				var error_email = false;
+				var error_password = false;
+				var error_retype_password = false;
+		
+		
+		
+		
+		$("#form_fname").focusout(function(){
+				check_fname();
+				
+		});
+		
+		$("#form_mname").focusout(function(){
+				check_mname();
+				
+		});	
+		
+		
+		$("#form_lname").focusout(function(){
+				check_lname();
+				
+		});
+	
+			$("#form_email").focusout(function(){
+				check_email();
+		});
+		
+		$("#form_password").focusout(function(){
+				check_password();
+		});
+		
+		$("#form_retype_password").focusout(function(){
+				check_retype_password();
+		});
+		
+	
+		
+		
+		
+			function check_fname() {
+			var pattern = /^[a-zA-Z]*$/;
+			var fname= $("#form_fname").val();
+			
+			
+			if(fname.length <= 2){
+			$("#fname_error_message").html("Input 2 or more letters");
+			$("#fname_error_message").show();
+             $("#form_fname").css("border-bottom","2px solid #F90A0A");
+				
+			}else if(pattern.test(fname) && fname !== '') {
+				$("#fname_error_message").hide();
+				$("#form_fname").css("border-bottom","2px solid #34f458");
+
+			}else{
+				
+				$("#fname_error_message").html("Firstname Should contain only characters");
+				$("#fname_error_message").show();
+				$("#form_fname").css("border-bottom","2px solid #f90A0A");
+				error_fname = true;
+				
+			}
+			
+			
+		}
+		
+	
+		
+			function check_mname() {
+			var pattern = /^[a-zA-Z]*$/;
+			var mname= $("#form_mname").val();
+			
+			
+			if(mname.length <= 2){
+			$("#mname_error_message").html("Input 2 or more letters");
+			$("#mname_error_message").show();
+             $("#form_mname").css("border-bottom","2px solid #F90A0A");
+				
+			}else if(pattern.test(mname) && mname !== '') {
+				$("#mname_error_message").hide();
+				$("#form_mname").css("border-bottom","2px solid #34f458");
+
+			}else{
+				
+				$("#mname_error_message").html("Middle Should contain only characters");
+				$("#mname_error_message").show();
+				$("#form_mname").css("border-bottom","2px solid #f90A0A");
+				error_mname = true;
+				
+			}
+			
+			
+		}
+	
+		
+			function check_lname() {
+			var pattern = /^[a-zA-Z]*$/;
+			var lname= $("#form_lname").val();
+			
+			
+			if(lname.length <= 2){
+			$("#lname_error_message").html("Input 2 or more letters");
+			$("#lname_error_message").show();
+             $("#form_lname").css("border-bottom","2px solid #F90A0A");
+				
+			}else if(pattern.test(lname) && lname !== '') {
+				$("#lname_error_message").hide();
+				$("#form_lname").css("border-bottom","2px solid #34f458");
+
+			}else{
+				
+				$("#lname_error_message").html("Lastname Should contain only characters");
+				$("#lname_error_message").show();
+				$("#form_lname").css("border-bottom","2px solid #f90A0A");
+				error_lname = true;
+				
+			}
+			
+			
+		}
+		
+	
+		
+		
+		 function check_password() {
+            var password_length = $("#form_password").val().length;
+            if (password_length < 8) {
+               $("#password_error_message").html("Atleast 8 Characters");
+               $("#password_error_message").show();
+               $("#form_password").css("border-bottom","2px solid #F90A0A");
+               error_password = true;
+            } else {
+               $("#password_error_message").hide();
+               $("#form_password").css("border-bottom","2px solid #34F458");
+            }
+         }
+
+         function check_retype_password() {
+            var password = $("#form_password").val();
+            var retype_password = $("#form_retype_password").val();
+            if (password !== retype_password) {
+               $("#retype_password_error_message").html("Passwords Did not Matched");
+               $("#retype_password_error_message").show();
+               $("#form_retype_password").css("border-bottom","2px solid #F90A0A");
+               error_retype_password = true;
+            } else {
+               $("#retype_password_error_message").hide();
+               $("#form_retype_password").css("border-bottom","2px solid #34F458");
+            }
+         }
+
+         function check_email() {
+            var pattern = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+            var email = $("#form_email").val();
+			 
+            if (pattern.test(email) && email !== '') {
+               $("#email_error_message").hide();
+               $("#form_email").css("border-bottom","2px solid #34F458");
+            } else {
+               $("#email_error_message").html("Invalid Email");
+               $("#email_error_message").show();
+               $("#form_email").css("border-bottom","2px solid #F90A0A");
+               error_email = true;
+            }
+         }
+		
+	
+		
+		
+		
+		
+		$("#registration_form").submit(function(){
+			
+			error_fname = false;
+			error_mname = false;
+			error_lname = false;
+			error_email = false;
+			error_password =false;
+			error_retype_password = false;
+	
+			var fname = $("#form_fname").val();
+			var mname = $("#form_mname").val();
+			var lname = $("#form_lname").val();
+			var gender = $("#form_gender").val();
+			var email = $("#form_email").val();
+			var password = $("#form_password").val();
+			var birthdate = $("#form_birthdate").val();
+			
+			check_fname();
+			check_mname();
+			check_lname();
+			check_email();
+			check_password();
+			check_retype_password();
+	
+			
+			if(error_fname === false && error_mname === false && error_lname === false  && error_email === false && error_password === false && error_retype_password === false ){
+			
+			
+				alert("succesfully fill up the form");
+						
+
+				
+				return true;
+			
+				
+			}else{
+				alert("Please fill the form correctly");
+				return false;
+			}
+			
+			
+		});
+		
+		
+	});
+
+
+</script>
